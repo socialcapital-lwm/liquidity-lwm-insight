@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Liquidity Summit 2026 · LWM Notes &amp; Chamath's Insight</title>
+<meta name="description" content="A cross-conference synthesis of the All-In Liquidity Summit 2026, with Chamath Palihapitiya's distinct reads called out throughout. From Social Capital's Learn With Me team.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;450;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;--bg-2:#fafafa;--bg-3:#f4f4f5;--panel:#ffffff;
+  --ink:#18181b;--ink-2:#3f3f46;--ink-3:#52525b;--muted:#71717a;--muted-2:#a1a1aa;
+  --line:#e4e4e7;--line-2:#d4d4d8;--line-soft:#efeff1;
+  --accent:#ad44f0;--accent-tint:rgba(173,68,240,0.08);--accent-line:rgba(173,68,240,0.28);
+  --gold:#9a7b1f;--gold-tint:rgba(154,123,31,0.08);
+  --teal:#0d7d6b;--teal-tint:rgba(13,125,107,0.08);--teal-line:rgba(13,125,107,0.26);
+  --shadow:0 1px 2px rgba(24,24,27,0.04),0 1px 3px rgba(24,24,27,0.03);
+  --shadow-lg:0 4px 18px rgba(24,24,27,0.07);
+  --mono:"IBM Plex Mono",ui-monospace,monospace;--sans:"IBM Plex Sans",system-ui,sans-serif;--serif:"Newsreader",Georgia,serif;
+}
+[data-theme="dark"]{
+  --bg:#0c0c0e;--bg-2:#16161a;--bg-3:#1c1c21;--panel:#141417;
+  --ink:#f4f4f5;--ink-2:#d4d4d8;--ink-3:#a1a1aa;--muted:#8b8b94;--muted-2:#5c5c66;
+  --line:#27272c;--line-2:#33333a;--line-soft:#1f1f24;
+  --accent:#c77dff;--accent-tint:rgba(199,125,255,0.10);--accent-line:rgba(199,125,255,0.32);
+  --gold:#d4b15a;--gold-tint:rgba(212,177,90,0.10);
+  --teal:#3fc9af;--teal-tint:rgba(63,201,175,0.10);--teal-line:rgba(63,201,175,0.30);
+  --shadow:0 1px 2px rgba(0,0,0,0.3);--shadow-lg:0 6px 24px rgba(0,0,0,0.4);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;transition:background .25s,color .25s;padding-bottom:env(safe-area-inset-bottom)}
+::selection{background:var(--accent-tint)}
+.wrap{max-width:980px;margin:0 auto;padding:0 28px}
+@media(max-width:560px){.wrap{padding:0 16px}}
+
+/* bar */
+.bar{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top)}
+.bar .wrap{display:flex;align-items:center;gap:18px;height:54px}
+.bar .mark{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.10em;text-transform:uppercase;display:flex;align-items:center;gap:9px;white-space:nowrap;flex-shrink:0}
+.bar .mark .sq{width:9px;height:9px;background:var(--accent);border-radius:2px;flex-shrink:0}
+.bar .right{margin-left:auto;display:flex;align-items:center;gap:8px;flex-shrink:0}
+.topnav{display:flex;gap:6px;align-items:center}
+.topnav a{font-family:var(--mono);font-size:10.5px;color:var(--muted);text-decoration:none;padding:5px 13px;border:1px solid var(--line-soft);border-radius:20px;transition:.12s;white-space:nowrap}
+.topnav a:hover,.topnav a.on{color:var(--accent);border-color:var(--accent-line);background:var(--accent-tint)}
+#menuBtn{display:none}
+.mobnav{display:none;border-bottom:1px solid var(--line);background:var(--bg);position:sticky;top:calc(54px + env(safe-area-inset-top));z-index:49}
+.mobnav.open{display:block}
+.mobnav a{display:block;font-family:var(--mono);font-size:13px;color:var(--ink-2);text-decoration:none;padding:13px 28px;border-top:1px solid var(--line-soft)}
+.mobnav a:first-child{border-top:0}
+.mobnav a:active,.mobnav a:hover{color:var(--accent);background:var(--accent-tint)}
+@media(max-width:720px){
+  .bar .mark{font-size:10px}
+  .bar .mark .full{display:none}
+  .topnav{display:none}
+  #menuBtn{display:flex}
+}
+.btn{font-family:var(--mono);font-size:11px;border:1px solid var(--line-2);border-radius:7px;background:var(--bg);color:var(--ink-3);padding:7px 11px;cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;text-decoration:none}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.toggle{width:34px;height:34px;border:1px solid var(--line-2);border-radius:7px;background:var(--bg);cursor:pointer;color:var(--ink-3);display:flex;align-items:center;justify-content:center;transition:.15s;flex-shrink:0}
+.toggle:hover{border-color:var(--accent);color:var(--accent)}
+.toggle svg{width:16px;height:16px}
+
+/* masthead */
+.mast{padding:40px 0 28px;border-bottom:1px solid var(--line)}
+.mast .ey{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:13px}
+.mast h1{font-family:var(--serif);font-weight:500;font-size:clamp(30px,4.4vw,44px);line-height:1.04;letter-spacing:-0.02em}
+.mast h1 .em{color:var(--accent)}
+.mast .sub{font-size:15.5px;color:var(--ink-3);margin-top:15px;max-width:none;line-height:1.6}
+
+/* section title */
+.sectit{padding:40px 0 4px}
+.sectit .dh{display:flex;align-items:baseline;gap:12px;padding-bottom:11px;border-bottom:2px solid var(--ink);margin-bottom:8px}
+.sectit .dh h2{font-family:var(--serif);font-size:25px;font-weight:600;letter-spacing:-0.01em}
+.sectit .dh .meta{margin-left:auto;font-family:var(--mono);font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+.sectit .lede{font-size:14.5px;color:var(--ink-3);max-width:72ch;line-height:1.6;margin-top:10px}
+
+/* ===== ABOVE THE FOLD: synthesis ===== */
+.synth{padding:34px 0 8px}
+.synth .shead{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.synth h2{font-family:var(--serif);font-weight:500;font-size:clamp(22px,3vw,30px);letter-spacing:-0.015em;line-height:1.12;max-width:none}
+.synth .intro{font-size:15.5px;color:var(--ink-2);max-width:none;margin-top:16px;line-height:1.62;font-family:var(--serif)}
+.synth .intro b{font-weight:600}
+
+.themes{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:26px}
+@media(max-width:680px){.themes{grid-template-columns:1fr}}
+.theme{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 19px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.theme::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent);opacity:.85}
+.theme .tn{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.1em}
+.theme .tt{font-family:var(--serif);font-size:18.5px;font-weight:600;letter-spacing:-0.01em;margin-top:7px;line-height:1.2;display:flex;align-items:flex-start;gap:9px}
+.theme .tt .ic{width:18px;height:18px;flex-shrink:0;color:var(--accent);margin-top:3px}
+.theme .td{font-size:13.5px;color:var(--ink-2);line-height:1.55;margin-top:9px}
+.theme .td b{color:var(--ink);font-weight:600}
+.theme .who{margin-top:11px;display:flex;flex-wrap:wrap;gap:5px}
+.theme .who .ch{font-family:var(--mono);font-size:9px;letter-spacing:.04em;color:var(--ink-3);background:var(--bg-3);border:1px solid var(--line-soft);border-radius:11px;padding:3px 8px}
+
+/* chamath alpha index */
+.alpha{margin-top:26px;background:linear-gradient(180deg,var(--accent-tint),transparent 75%);border:1px solid var(--accent-line);border-radius:14px;padding:22px 22px 8px;box-shadow:var(--shadow)}
+.alpha .ah{display:flex;align-items:center;gap:10px;margin-bottom:5px}
+.alpha .ah .ic{width:19px;height:19px;color:var(--accent)}
+.alpha .ah .at{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.alpha .ad{font-size:14.5px;color:var(--ink-2);max-width:none;line-height:1.6;font-family:var(--serif);margin-bottom:14px}
+.alpha .arow{display:flex;gap:13px;padding:13px 0;border-top:1px solid var(--accent-line)}
+.alpha .arow .who{font-family:var(--mono);font-size:10px;color:var(--accent);font-weight:600;width:104px;flex-shrink:0;padding-top:2px;letter-spacing:.02em}
+.alpha .arow .what{font-size:13.7px;color:var(--ink);line-height:1.55}
+.alpha .arow .what b{font-weight:600}
+.alpha .arow a.jump{color:var(--accent);text-decoration:none;font-family:var(--mono);font-size:10px;white-space:nowrap;border-bottom:1px solid var(--accent-line);margin-left:4px}
+@media(max-width:560px){.alpha .arow{flex-direction:column;gap:4px}.alpha .arow .who{width:auto}}
+
+/* session card */
+.card{background:var(--panel);border:1px solid var(--line);border-radius:13px;margin-top:16px;overflow:hidden;box-shadow:var(--shadow);scroll-margin-top:118px}
+.card .top{padding:18px 20px 16px}
+.card .meta-row{display:flex;align-items:baseline;gap:11px;margin-bottom:9px;flex-wrap:wrap}
+.card .tm{font-family:var(--mono);font-size:11px;color:var(--accent);font-weight:600;letter-spacing:.04em}
+.card .tag{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line-soft);background:var(--bg-3);border-radius:3px;padding:2px 7px}
+.card .tag.pitch{color:var(--accent);border-color:var(--accent-line);background:var(--accent-tint)}
+.card .tag.bestie{color:var(--gold);border-color:var(--gold-tint);background:var(--gold-tint)}
+.card .tag.cmflag{color:var(--accent);border-color:var(--accent-line);background:var(--accent-tint);display:inline-flex;align-items:center;gap:4px}
+.card .tag.cmflag svg{width:9px;height:9px}
+.card .nm{font-family:var(--serif);font-size:25px;font-weight:600;letter-spacing:-0.015em;line-height:1.1}
+.card .ro{font-size:13px;color:var(--ink-3);margin-top:3px}
+
+/* highlight (spine) */
+.hl{margin-top:15px;border-left:2.5px solid var(--accent);padding:2px 0 2px 15px}
+.hl .hll{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;font-weight:600}
+.hl p{font-size:15px;color:var(--ink);line-height:1.6;margin-bottom:9px;font-family:var(--serif)}
+.hl p:last-child{margin-bottom:0}
+.hl b{font-weight:600}
+.hl .pts{list-style:none;margin:4px 0 0}
+.hl .pts li{font-family:var(--sans);font-size:13.5px;color:var(--ink-2);padding:4px 0 4px 16px;position:relative;line-height:1.5}
+.hl .pts li::before{content:"";position:absolute;left:1px;top:11px;width:5px;height:5px;background:var(--accent);border-radius:50%}
+.hl .pts li b{color:var(--ink);font-weight:600}
+
+/* data chips */
+.metrics{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.metric{font-family:var(--mono);font-size:11px;color:var(--ink-2);background:var(--bg-3);border:1px solid var(--line-soft);border-radius:6px;padding:5px 9px}
+.metric b{color:var(--accent);font-weight:600}
+
+/* organizer "adds" block */
+.adds{margin-top:15px;background:var(--teal-tint);border:1px solid var(--teal-line);border-radius:10px;padding:13px 15px}
+.adds .al{font-family:var(--mono);font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--teal);font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.adds .al .ic{width:13px;height:13px}
+.adds .pts{list-style:none;margin:0}
+.adds .pts li{font-size:13.3px;color:var(--ink-2);padding:3px 0 3px 16px;position:relative;line-height:1.5}
+.adds .pts li::before{content:"+";position:absolute;left:0;top:2px;color:var(--teal);font-weight:600;font-family:var(--mono);font-size:12px}
+.adds .pts li b{color:var(--ink);font-weight:600}
+
+/* expand full notes */
+.exp{margin-top:4px;border-top:1px solid var(--line-soft)}
+.exp .eh{display:flex;align-items:center;gap:9px;padding:13px 20px;cursor:pointer;user-select:none;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);transition:color .12s}
+.exp .eh:hover{color:var(--accent)}
+.exp .eh .chev{transition:transform .2s}
+.exp .eh .chev svg{width:14px;height:14px;display:block}
+.exp.open .eh .chev{transform:rotate(90deg)}
+.exp .ebody{display:none;padding:0 20px 20px}
+.exp.open .ebody{display:block}
+.notesec{margin-top:14px}
+.notesec h4{font-family:var(--mono);font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.notesec h4.org{color:var(--teal)}
+.notesec p{font-size:13.5px;color:var(--ink-2);line-height:1.62}
+
+/* chamath spotlight */
+.cm{margin-top:2px;background:linear-gradient(180deg,var(--accent-tint),transparent);border-top:1px solid var(--accent-line);padding:17px 20px 19px}
+.cm .cml{font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:11px;display:flex;align-items:center;gap:8px}
+.cm .cml .ic{width:16px;height:16px}
+.cm .ci{display:flex;gap:11px;margin-bottom:10px}
+.cm .ci:last-child{margin-bottom:0}
+.cm .ci .qn{font-family:var(--mono);font-size:10px;color:var(--accent);font-weight:600;flex-shrink:0;padding-top:4px;width:14px}
+.cm .ci p{font-size:14.5px;color:var(--ink);line-height:1.58;font-family:var(--serif)}
+.cm .ci p b{font-weight:600}
+.cm .uniq{margin-top:12px;padding-top:11px;border-top:1px dashed var(--accent-line);font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.02em;line-height:1.5}
+.cm .uniq b{color:var(--accent);font-weight:600}
+
+/* group head */
+.grouphead{margin:30px 0 2px;padding:16px 18px;background:var(--bg-2);border:1px solid var(--line);border-radius:11px}
+.grouphead .gt{font-family:var(--serif);font-size:19px;font-weight:600;letter-spacing:-0.01em}
+.grouphead .gd{font-size:13px;color:var(--ink-3);margin-top:5px;line-height:1.5}
+
+/* footer */
+footer{border-top:2px solid var(--ink);margin-top:44px;padding:26px 0 56px}
+footer .ft{font-family:var(--mono);font-size:10.5px;color:var(--muted);line-height:1.7;max-width:none}
+footer .ft b{color:var(--ink-3)}
+footer .by{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);margin-top:16px;padding-top:14px;border-top:1px solid var(--line-soft)}
+footer .by b{color:var(--ink)}
+footer .by .lwm{color:var(--accent)}
+footer .by a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-line)}
+</style>
+</head>
+<body data-theme="light">
+
+<div class="bar"><div class="wrap">
+  <div class="mark"><span class="sq"></span> Liquidity '26 <span class="full">· Social Capital_Learn With Me</span></div>
+  <nav class="topnav">
+    <a href="#synthesis" class="on">Synthesis</a>
+    <a href="#d1">Day 1</a>
+    <a href="#d2">Day 2</a>
+  </nav>
+  <div class="right">
+    <button class="toggle" id="menuBtn" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    <button class="toggle" id="tg" aria-label="Toggle theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg></button>
+  </div>
+</div></div>
+<div class="mobnav" id="mobnav">
+  <a href="#synthesis">Synthesis</a>
+  <a href="#d1">Day 1</a>
+  <a href="#d2">Day 2</a>
+</div>
+
+<div class="wrap">
+  <header class="mast">
+    <div class="ey">All-In Liquidity Summit · Yountville, CA · June 1–2, 2026</div>
+    <h1>LWM Notes <span class="em">&amp; Chamath's Insight</span></h1>
+    <p class="sub">A session-by-session synthesis of the All-In Liquidity Summit.<br>Each session leads with the takeaway, folds in All In's notes, and calls out Chamath's reflections and insight.</p>
+  </header>
+</div>
+
+<div class="wrap">
+
+<!-- ===================== ABOVE THE FOLD ===================== -->
+<section class="synth" id="synthesis">
+  <div class="shead">The 60-second read</div>
+  <h2>Money is about to move, and it's chasing electrons, silicon, and scarcity.</h2>
+  <p class="intro">Strip away the fourteen sessions and the summit told a single story. A historic <b>liquidity wave</b> is arriving as SpaceX, OpenAI and Anthropic head for the exits. The three of them alone are projected to exceed the entire prior decade of venture exits combined. That capital has to go somewhere, and nearly every speaker pointed it at the same place: the physical substrate of AI. <b>Power, memory, copper, and specialized silicon</b> are where durable value pools; the model layer itself is contested. The recurring worry underneath the euphoria: when the IPOs price, is retail the exit liquidity? Six themes carried across the room.</p>
+
+  <div class="themes">
+    <div class="theme">
+      <div class="tn">Theme 01</div>
+      <div class="tt"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-6"/></svg>The liquidity wave &amp; the barbell</div>
+      <div class="td">SpaceX, OpenAI and Anthropic exits will <b>dwarf the last decade combined</b>. As LPs get capital back, the structure that forms is a barbell, proven managers on one end, a swarm of emerging micro-managers on the other. Mean venture returns look spectacular; <b>the median stays poor</b>.</div>
+      <div class="who"><span class="ch">Laffont</span><span class="ch">Besties</span><span class="ch">Markets Panel</span><span class="ch">Maris</span></div>
+    </div>
+    <div class="theme">
+      <div class="tn">Theme 02</div>
+      <div class="tt"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg>AI is a power problem</div>
+      <div class="td">Compute resolves to energy and materials. A 1GW datacenter swallows <b>50,000 tons of copper</b>; the binding constraint OpenAI feels is 2030–32, not now. Hence the case for owning the electrons, and, on a decade view, moving compute to space where 24/7 solar yields 5x.</div>
+      <div class="who"><span class="ch">Friar</span><span class="ch">Dreyfus</span><span class="ch">IPO Panel</span><span class="ch">Talen</span></div>
+    </div>
+    <div class="theme">
+      <div class="tn">Theme 03</div>
+      <div class="tt"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg>Models commoditize, the stack doesn't</div>
+      <div class="td">Frontier weights <b>fit on a USB stick</b> and distill in a day; the closed-to-open edge is ~3 months. Durable value sits at the silicon layer (genuinely hard) and in AI-native applications. "Analytical SaaS is over." <i>But note the live debate below.</i></div>
+      <div class="who"><span class="ch">Arora</span><span class="ch">Maris</span><span class="ch">Laffont (contra)</span></div>
+    </div>
+    <div class="theme">
+      <div class="tn">Theme 04</div>
+      <div class="tt"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg>Public vs. private &amp; the retail question</div>
+      <div class="td">Secondaries flipped from a <b>discount to a 106%-of-NAV premium</b>; long-only funds may unleash hundreds of billions as the giants list. Yet Gerstner is selling into record volume and warns "14 ETFs levered to SpaceX is froth." The unease: democratization, or distribution to retail at the top?</div>
+      <div class="who"><span class="ch">Markets Panel</span><span class="ch">Maris</span><span class="ch">Ackman</span><span class="ch">Besties</span></div>
+    </div>
+    <div class="theme">
+      <div class="tn">Theme 05</div>
+      <div class="tt"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Can the US build a moat China can't cross?</div>
+      <div class="td">Several pitches leaned on the idea that a supply-chain or processing chokepoint could lock China out: radioisotopes from <b>US nuclear-weapons waste</b> (Aktis), copper and rare-earth <b>processing</b> (Dreyfus), and the datacenter buildout framed as a US-vs-China contest. Whether any of these becomes a durable advantage, or whether China closes the gap as it has before, is the open question of the coming decade. The thesis is real; the outcome is not yet settled.</div>
+      <div class="who"><span class="ch">Aktis</span><span class="ch">Dreyfus</span><span class="ch">Fetterman/McCormick</span></div>
+    </div>
+    <div class="theme">
+      <div class="tn">Theme 06</div>
+      <div class="tt"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg>The scarce edge is human judgment</div>
+      <div class="td">As AI eats the quantifiable, the durable edge moves to what resists quantification: a <b>long time horizon</b> (Ackman), judging management and moats (Loeb), and founder authority to make 3–5 year bets. Quality and durability beat cheap and liquid.</div>
+      <div class="who"><span class="ch">Ackman</span><span class="ch">Loeb</span><span class="ch">Maris</span></div>
+    </div>
+  </div>
+
+  <div class="alpha" id="alpha">
+    <div class="ah">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.5h7.6z"/></svg>
+      <span class="at">Chamath's alpha · the non-consensus index</span>
+    </div>
+    <p class="ad">The Learn With Me lens: what did Chamath say that the speakers and organizers didn't? These are the reads found only in Chamath's own reflections, the highest-signal lines for our team, each expanded in its session below.</p>
+    <div class="arow"><div class="who">On Friar / OpenAI</div><div class="what">The whole game is reimagining the cloud for AI: the data-center stack is <b>still extremely inefficient</b>, and the CapEx→OpEx shift via CSPs implies a <b>"modern neo cloud"</b> built for lowest OpEx. <a class="jump" href="#friar">→ jump</a></div></div>
+    <div class="arow"><div class="who">On Arora</div><div class="what">The future is open source: as open models improve, the unit economics of closed-source models get harder to justify, and the edge between closed and open is shorter than commonly discussed. <a class="jump" href="#arora">→ jump</a></div></div>
+    <div class="arow"><div class="who">On Laffont</div><div class="what">A concrete trading algorithm: <b>own a huge basket, concentrate as winners grow, own the whole entity once it passes $100B</b>, and the candid line that SpaceX distributions will flatter <b>mean</b> returns while <b>median</b> stays poor. <a class="jump" href="#laffont">→ jump</a></div></div>
+    <div class="arow"><div class="who">On Arora / structure</div><div class="what">I think of the AI factory as "a <b>machine that makes machines</b>," where the model (Anthropic vs. OpenAI) is the <b>energy source</b> the factory is designed around. <a class="jump" href="#arora">→ jump</a></div></div>
+    <div class="arow"><div class="who">On Maris / 8090</div><div class="what">The org-design tell: 8090 is built as <b>"systems on a chip"</b>, each unit with defined inputs/outputs and interconnects, no hierarchy. And the Laffont-vs-Maris fund-size tension is <b>"both true."</b> <a class="jump" href="#maris">→ jump</a></div></div>
+    <div class="arow"><div class="who">On Ackman / Loeb</div><div class="what">Companies with <b>regulatory moats are safe for a long time</b> (infra included); <b>asset-light, UI-oriented, non-regulated</b> businesses are the least valuable ahead, the inverse of the last cycle's darlings. <a class="jump" href="#arora">→ jump</a></div></div>
+  </div>
+</section>
+
+<!-- ===================== DAY 1 ===================== -->
+<div class="sectit" id="d1"><div class="dh"><h2>Monday, June 1, AM Keynotes</h2><span class="meta">Day 1 · Level-setting</span></div>
+<p class="lede">The opening day set the macro table: the politics of the buildout, OpenAI's financing engine, and how four legendary investors are repositioning for the AI era.</p></div>
+
+<!-- FETTERMAN / McCORMICK -->
+<div class="card" id="fetterman">
+  <div class="top">
+    <div class="meta-row"><span class="tag">Keynote · Fireside</span></div>
+    <div class="nm">Fetterman / McCormick</div>
+    <div class="ro">U.S. Senators for Pennsylvania (D &amp; R)</div>
+    <div class="hl">
+      <div class="hll">The takeaway</div>
+      <p>The two PA senators made the pragmatic-center case that the AI buildout is, politically, a <b>blue-collar jobs story</b>, and warned that the anti-datacenter backlash now unites the far left and far right into a single horseshoe.</p>
+      <ul class="pts">
+        <li>The organizing frame for both parties' center is <b>US-vs-China competition</b> in the manufacturing and infrastructure that supports AI.</li>
+        <li>The datacenter buildout is a <b>construction, trades and logistics jobs driver</b>, roughly <b>two logistics jobs per datacenter job</b>, reversing decades of PA population decline.</li>
+        <li>The real obstacle is a <b>coordinated misinformation campaign</b> conflating "AI" with datacenters, which both senators argue is fueled in part by foreign actors including China.</li>
+        <li>PA sits on the <b>world's 4th-largest natural gas reserves</b>; energy security is framed as national security.</li>
+      </ul>
+    </div>
+    <div class="metrics"><span class="metric"><b>2:1</b> logistics jobs per datacenter job</span><span class="metric"><b>$500M</b> McCormick race spend</span><span class="metric"><b>$330M</b> Fetterman race spend</span><span class="metric"><b>4th-largest</b> NatGas reserves (PA)</span></div>
+    <div class="adds">
+      <div class="al"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>From the organizers' notes</div>
+      <ul class="pts">
+        <li>Fetterman reframes datacenter moratoriums as a <b>"China-first" policy</b> and refuses to join a "party of Luddites", willing to risk a primary over it, and now defends the filibuster as a tool that forces compromise.</li>
+        <li>McCormick names the <b>K-shaped economy and wealth concentration</b> as an existential problem for capitalism, proposing non-government, incentive-based fixes, "Invest America" accounts and school choice.</li>
+        <li>In the Bestie reactions, Sacks branded it the "blue-collar boom"; Friedberg argued freer markets aid mobility; Jason vented at both parties over a $40T debt and special-interest money.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="exp" data-exp="fetterman">
+    <div class="eh" data-toggle><span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></span> Full field notes</div>
+    <div class="ebody">
+      <div class="notesec"><h4>Thesis / argument</h4><p>US vs China focus on manufacturing for the infrastructure supporting AI. An argument for the pragmatic center of both party positions, that rapid technological change and the anxiety it creates make bipartisan work more critical than ever.</p></div>
+      <div class="notesec"><h4>Quotes &amp; claims</h4><p>Heavy focus on energy, AI and jobs. PA as the world's 4th-largest natural gas reserves. The AI/datacenter buildout is turning into a blue-collar job driver for construction, trades and logistics. "AI" broadly is getting conflated with the development of datacenters. The far left and far right horseshoe together on the anti-datacenter position. Fetterman: holding Iran accountable is necessary even if it inflates near-term energy prices.</p></div>
+      <div class="notesec"><h4>Data points</h4><p>Two logistics jobs for every one job in a datacenter. $500M spent in the McCormick race, $330M in the Fetterman race.</p></div>
+      <div class="notesec org"><h4 class="org">Organizer notes, additional context</h4><p>Both frame the AI/energy push as a "blue-collar boom" with wage gains for welders and electricians. McCormick: winning PA requires a coalition of urban, rural and working-class voters; the far left's drift toward socialism and anti-Semitism is "horribly unhealthy for America." Fetterman admits he was wrong to want the filibuster gone. Bestie reactions captured separately: Sacks flagged Fetterman's independent streak as primary-vulnerable; Friedberg on government spending and market inefficiency; Jason on debt and special-interest capture; Chamath drew the parallel below.</p></div>
+    </div>
+  </div>
+  <div class="cm" data-cm="fetterman">
+    <div class="cml"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.5h7.6z"/></svg> Chamath's read</div>
+    <div class="ci"><span class="qn">→</span><p>I see a historical parallel here: today's <b>opposition to AI datacenters mirrors the earlier opposition to shale-gas fracking</b>, a once-controversial buildout that became foundational to American energy. The implication for capital: backlash to infrastructure of this kind tends to be a leading contrarian signal, not a stop sign.</p></div>
+    <div class="uniq"><b>Why it's here:</b> The fracking analogy is Chamath's framing alone, neither senator nor the LWM field notes drew it.</div>
+  </div>
+</div>
+
+<!-- SARAH FRIAR -->
+<div class="card" id="friar">
+  <div class="top">
+    <div class="meta-row"><span class="tag">Keynote</span><span class="tag cmflag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.5h7.6z"/></svg>Chamath alpha</span></div>
+    <div class="nm">Sarah Friar</div>
+    <div class="ro">Chief Financial Officer, OpenAI</div>
+    <div class="hl">
+      <div class="hll">The takeaway</div>
+      <p>OpenAI's CFO laid out the clearest public picture yet of the company's <b>compute-financing flywheel</b>: bigger models drive efficiency and margin, margin buys compute, and the binding constraint isn't 2026, it's 2030–2032.</p>
+      <ul class="pts">
+        <li>OpenAI is building the <b>AI intelligence layer</b>; being the "front door" compounds advantage across many interfaces (users, data, personalization, margins).</li>
+        <li>The financing structure is the real story: <b>CSP partnerships convert CapEx to OpEx</b>, riding partners' investment-grade balance sheets OpenAI can't access alone, stretching the same dollars across far more compute.</li>
+        <li>Shifting from <b>cost-plus to priced-to-value</b>; the <b>$122B March raise</b> was "just another way to fundraise," and an IPO is framed the same way, optionality, not a destination.</li>
+        <li>Compute is felt most acutely in <b>2030–2032</b>, not now; the next big training run lands in the fall on <b>Vera Rubin</b> chips.</li>
+      </ul>
+    </div>
+    <div class="metrics"><span class="metric"><b>900M</b> weekly ChatGPT users</span><span class="metric"><b>$122B</b> raised, Mar '26</span><span class="metric"><b>1GW ≈ $50B</b> all-in</span><span class="metric"><b>1GW ≈ $10B/yr</b> revenue</span><span class="metric"><b>&gt;90%</b> deprecation cost 5.0→5.4</span><span class="metric"><b>~11%+</b> search share</span><span class="metric"><b>API ≫ consumer</b> rev today</span></div>
+    <div class="adds">
+      <div class="al"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>From the organizers' notes</div>
+      <ul class="pts">
+        <li>Chip diversification is broader than commonly noted: <b>NVIDIA, AMD, Cerebras, and Broadcom co-development</b>, across CSPs from Oracle and CoreWeave to Microsoft, GCP, AWS and neoscalers.</li>
+        <li>On the ad question: a potential platform that fuses <b>search-like intent with Meta-like memory/context</b>, but governed by an "best result over sponsorship" principle, funding broad free access while preserving ad-free tiers.</li>
+        <li>The convergence thesis stated plainly: the stack (cloud, chips, models, apps) is collapsing together, and advantage accrues to the <b>layers closest to customer value</b>.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="exp" data-exp="friar">
+    <div class="eh" data-toggle><span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></span> Full field notes</div>
+    <div class="ebody">
+      <div class="notesec"><h4>Thesis / argument</h4><p>OpenAI is building the AI layer, the infrastructure, with many interfaces into the world; compounding advantage from being the front door. Bigger models lead to more efficiencies, which compound to higher gross margins, which buys access to more compute. Moving from cost-plus to priced-to-value; token constraints are part of the model. In 2026 the only place to get more compute has been Elon; in 2027 it's still limited. Training mostly still happens in the US; inference goes global in an agentic world. Multimodality requires more distributed compute. Fastest takeoff of Codex is in GTM and finance. Today's compute focus is for 2028 onward; most short of compute in 2030–2032.</p></div>
+      <div class="notesec"><h4>Quotes &amp; claims</h4><p>IPO, just another way to fundraise. $122B raised in March for maximum flexibility (biggest private raise to date); capital returned to shareholders via buybacks. Fastest-growing continent is Africa; fastest-growing languages Azerbaijani and Kazakh. Enterprise firing on all cylinders without leaving consumers behind. Sam in MI cutting the ribbon on a 1GW datacenter in the Oracle complex; Nextdoor-style bottom-up community engagement on local datacenter benefits (power, jobs, Codex education credits). A consumer device by end of year. Compute per GW getting more expensive because power is, but compute is getting cheaper to offset. Next big training run in the fall on Vera Rubin. The harness is what brings context. On ads, hold to best/true information vs. Meta's lookalike approach; OpenAI has memory about you.</p></div>
+      <div class="notesec"><h4>Data points</h4><p>900M weekly ChatGPT users. Codex ~5M this week. Engagement by tier: free ~7 turns/day, first paid ~15, $20/mo ~21, $200/mo ~75. 5.0→5.4 deprecation cost &gt;90%; 5.4 very expensive to train and serve. 5.5 prices raised 2x but customers get 20–30% cost reduction per token from efficiency. 1GW ≈ $50B all-in. CSP partnerships shift CapEx to OpEx, $122B can buy &gt;2.5GW by shifting to OpEx. At least 11% of search (really higher). API an order of magnitude higher revenue than consumer today.</p></div>
+      <div class="notesec org"><h4 class="org">Organizer notes, additional context</h4><p>Saline, Michigan named as the 1GW build site. Diversified chips/CSPs detailed above. Sora/video remains strategic despite compute intensity. Forecasting: near-term bottoms-up product models; long-term revenue linked to compute capacity, conservative on model gains. Thermo Fisher cited in healthcare/bio lab discovery use cases.</p></div>
+    </div>
+  </div>
+  <div class="cm" data-cm="friar">
+    <div class="cml"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.5h7.6z"/></svg> Chamath's read</div>
+    <div class="ci"><span class="qn">1</span><p>Sarah's case is genuinely compelling, a competent and articulate strategy that makes the investment case. But my own conclusion is structural: the CapEx→OpEx shift via CSPs <b>implies a need to reimagine the CSP itself</b> to offer the lowest possible OpEx. The opportunity that creates is a <b>"modern neo cloud."</b></p></div>
+    <div class="ci"><span class="qn">2</span><p>The entire <b>data-center stack remains extremely inefficient</b> and needs reimagining for next-generation learning, power management and storage included. The flip side: I read the <b>2030–2032 compute constraint as too far out to drive today's strategic decisions</b>.</p></div>
+    <div class="uniq"><b>Why it's here:</b> Friar described OpenAI's flywheel; the "neo cloud" opportunity, the stack-inefficiency thesis, and the "too-far-out-to-matter" read on the 2030 constraint are <b>Chamath's interpretation</b> of what her strategy opens up, not in her remarks or the organizer notes.</div>
+  </div>
+</div>
+
+<!-- BILL ACKMAN -->
+<div class="card" id="ackman">
+  <div class="top">
+    <div class="meta-row"><span class="tag">Keynote</span></div>
+    <div class="nm">Bill Ackman</div>
+    <div class="ro">Founder &amp; CEO, Pershing Square</div>
+    <div class="hl">
+      <div class="hll">The takeaway</div>
+      <p>Ackman argued that in the AI era the scarcest edge is a <b>long time horizon</b>, supportive, concentrated shareholders let founder-led companies make 3–5 year bets while everyone else is captured by the next quarter.</p>
+      <ul class="pts">
+        <li>The disease of public markets is short-termism; a supportive shareholder <b>extends the strategic horizon</b>. "Time is more valuable than ever."</li>
+        <li>Business <b>quality and durable, protectable growth</b> have overtaken the early-career focus on cheap, liquid names. Moats are everything: "the greatest era to build a business ever, and the probability of being disrupted has gone up enormously."</li>
+        <li>High-quality "old tech", <b>Amazon, Meta, Microsoft</b>, is being overlooked in the rush to the new new thing, an echo of Berkshire during the dot-com bubble.</li>
+        <li>He's building a <b>modern Berkshire</b>: reshaping Howard Hughes (HHH) into an insurance-backed compounding vehicle, managing the asset side, not just liabilities.</li>
+      </ul>
+    </div>
+    <div class="metrics"><span class="metric"><b>MSFT/META/AMZN</b> seen undervalued</span><span class="metric"><b>HHH</b> insurance-backed compounder</span><span class="metric"><b>PSUS</b> ~18% discount to cash</span><span class="metric">OpenAI/Anthropic ≈ <b>Series D/E</b></span></div>
+    <div class="adds">
+      <div class="al"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>From the organizers' notes</div>
+      <ul class="pts">
+        <li>The clean framing: <b>every business is either invested in AI or threatened by it</b>, the central job for a long-term investor is underwriting durability and disruption risk from agile competitors.</li>
+        <li>Founder advantage is sharpened: founders have the authority and personal stake to make the <b>radical decisions</b> a professional CEO with a short tenure won't.</li>
+        <li>He evaluates the giant late-stage privates (SpaceX, OpenAI) through an explicit <b>venture lens, people, opportunity, context, and the deal</b>.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="exp" data-exp="ackman">
+    <div class="eh" data-toggle><span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></span> Full field notes</div>
+    <div class="ebody">
+      <div class="notesec"><h4>Thesis / argument</h4><p>The problem of being public today is the short-term nature of markets, how to make 3–5 year decisions under quarterly pressure. A supportive shareholder can extend the horizon. Really high-quality things get left behind when short-term capital chases the big thing (chips, semis, energy now). In the SaaSpocalypse, a founder-led business is key; the typical F500 CEO sits only a few years and is inherently short-term.</p></div>
+      <div class="notesec"><h4>Quotes &amp; claims</h4><p>Biggest change in his strategy over time is in business quality, long-term protectable growth. As activist as ever, but more on Twitter than in the corporate context. Tim Hortons story, once nobody knew Pershing; today companies open doors. Greatest era to build ever, so disruption probability is way up. Every CEO is thinking about integrating AI; if not, it's the first board question. Haven't seen much F500 success yet, first use cases are legal, compliance, back office. If you're really good at investing you go to a hedge fund, not an insurance company, hence a large opportunity on the asset side of insurance. A company must earn above its cost of capital; Elon kept his low.</p></div>
+      <div class="notesec"><h4>Data points</h4><p>"Valuation is like a tether on the market", too high it bounces back, too cheap it pulls up. "Underwrite SpaceX the way you underwrite venture." OpenAI and Anthropic are like a Series D or E. Book: "The Financial History of Berkshire Hathaway", insurance was the vast majority of value; invest premiums paid up front. Buffett took 100% of premium into Treasuries, other capital into common stocks. PSUS at ~18% discount to cash.</p></div>
+      <div class="notesec org"><h4 class="org">Organizer notes, additional context</h4><p>Frames his own evolution from aggressive activism to long-term constructive support. The best investments require no intervention, but a large supportive holder helps management prioritize multi-year strategy. Disruption risk for incumbents has surged with broad access to capital, talent and compute. He feels a duty to "speak the truth" on markets and policy, driving his media presence.</p></div>
+    </div>
+  </div>
+  <div class="cm" data-cm="ackman">
+    <div class="cml"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.5h7.6z"/></svg> Chamath's read</div>
+    <div class="ci"><span class="qn">→</span><p>One interesting counterpoint to the staying-private-for-longer trend is that two of the top private assets, OpenAI and Anthropic, are going public within 3 to 5 years of founding. The window between private and public advantage is compressing.</p></div>
+    <div class="uniq"><b>Why it's here:</b> This counterpoint on the compressing private-to-public window, with OpenAI and Anthropic as the examples, comes from Chamath's own reflections, not from Ackman's remarks or the organizer notes.</div>
+  </div>
+</div>
+
+<!-- NIKESH ARORA -->
+<div class="card" id="arora">
+  <div class="top">
+    <div class="meta-row"><span class="tag">Keynote</span><span class="tag cmflag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.5h7.6z"/></svg>Chamath alpha</span></div>
+    <div class="nm">Nikesh Arora</div>
+    <div class="ro">Chairman &amp; CEO, Palo Alto Networks</div>
+    <div class="hl">
+      <div class="hll">The takeaway</div>
+      <p>Arora's blunt message: <b>analytical SaaS is "over,"</b> value migrates to AI-native application systems, and the offense-defense race in security is about to accelerate, with autonomous exploit-chaining "three months away" from the wild.</p>
+      <ul class="pts">
+        <li>"If you're an analytical SaaS data company, <b>it's over</b>", you can run a model against the data. Models become the <b>utility layer</b>; profit pools live in applications.</li>
+        <li>The frontier security threat is near: on <b>Mythos</b>, models find vulnerabilities and <b>daisy-chain</b> them, "three months away" from these capabilities in the wild.</li>
+        <li>The IP is tiny and fragile: <b>frontier weights fit on a USB stick</b>, a new model distills in ~24 hours, and the closed-to-open edge is only ~3 months.</li>
+        <li>Work goes <b>headless</b>, kill the UI, rewire the systems of work; the audit trail improves because humans stop touching the data. <b>Codex and Claude Code</b> attack the application-layer profit pools directly.</li>
+      </ul>
+    </div>
+    <div class="metrics"><span class="metric"><b>5–7 yrs → 6 wks</b> to find vulns w/ AI</span><span class="metric"><b>~10–30%</b> false-positive rate</span><span class="metric"><b>~3 mo</b> closed→open edge</span><span class="metric"><b>90% gross / 40% net</b> if optimized</span><span class="metric"><b>10x</b> data storage in 3 yrs</span><span class="metric"><b>GOOG</b> → first $10T co.</span></div>
+    <div class="adds">
+      <div class="al"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>From the organizers' notes</div>
+      <ul class="pts">
+        <li>The near-term national-security risk is <b>economic chaos via basic breaches</b>, credential theft, supply-chain disruption, vulnerable small offices, not cracking hardened infrastructure.</li>
+        <li>His M&amp;A focus is shifting from product tuck-ins toward <b>identity and agentic security</b>; AI-driven operational excellence could justify broader acquisitions.</li>
+        <li>The hardware bottleneck is <b>production, not design</b>, everything is backordered globally; financial services resist the cloud because latency directly costs money.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="exp" data-exp="arora">
+    <div class="eh" data-toggle><span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></span> Full field notes</div>
+    <div class="ebody">
+      <div class="notesec"><h4>Thesis / argument</h4><p>Companies find their own vulnerabilities, then seek help to patch and block. Organizations lack context and memory, the same problem in cyber; they need 10x the data to defend. Increasingly want all data in one place to run models against it. Step 1: systems of work go headless; true efficiency comes from changing how people work, and the audit trail improves because humans aren't touching data. The application layer is still unformed and inefficient to build in-house, winners are AI-native systems. Hardware is the cheapest way to manage high latency.</p></div>
+      <div class="notesec"><h4>Quotes &amp; claims</h4><p>On Mythos, get vulnerabilities then daisy-chain them; ~three months from these capabilities in the wild. We're in a race between vulnerabilities and patches and not doing as well as we should. If you're an analytical SaaS data company, it's over. Models become the utility layer; profit pools in applications. Codex and Claude Code attack application-layer profit pools. The entire weights of the most recent models fit on a USB stick, that's the IP; all the data distills in under 24 hours from a new release. Two fastest places to get revenue: replacement TAM and consumer revenue. The hardware industry is seeing the bonanza of a lifetime.</p></div>
+      <div class="notesec"><h4>Data points</h4><p>In 6 weeks, found vulnerabilities that would've taken 5–7 years, at low-millions cost at current token prices. Closed-to-open edge ~3 months. Mythos false-positive rate 30%. Gross margin in the 90s, net in the 40s if you optimize AI now. We'll need 10x the data storage we have today.</p></div>
+      <div class="notesec org"><h4 class="org">Organizer notes, additional context</h4><p>Reducing false positives toward near-zero (without raising false negatives) is the critical barrier to enterprise AI defense, great for offense, risky for defense. Infrastructure software (databases, storage) will be crucial and undervalued: Databricks, Snowflake, MongoDB, Oracle. GOOG underrated, first $10T company. More technical talent needed, not less, as AI drives transformation.</p></div>
+    </div>
+  </div>
+  <div class="cm" data-cm="arora">
+    <div class="cml"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.5h7.6z"/></svg> Chamath's read</div>
+    <div class="ci"><span class="qn">1</span><p>I'd take Nikesh's "utility layer" thinking into a builder's frame: the strategy is to build a <b>"machine that makes machines."</b> AI models are <b>energy sources</b>, and the factory has to be designed to run on a specific LLM. Anthropic versus OpenAI is an architecture decision, not a vendor one. Durable value sits at the <b>silicon layer</b> (extreme difficulty) and in specific, broad-based applications.</p></div>
+    <div class="ci"><span class="qn">2</span><p>As open models improve, the unit economics of closed-source models get harder and harder to justify, and OpenAI and Anthropic moving into end markets only accelerates the commoditization. The edge between closed and open is <b>shorter than commonly discussed</b>. The future is open source.</p></div>
+    <div class="ci"><span class="qn">3</span><p>And the durability map, reading this alongside Bill: <b>companies with regulatory moats are safe for a long time</b>, infrastructure included, while <b>asset-light, UI-oriented, non-regulated businesses are the least valuable</b> going forward. It's the inversion of the last cycle's winners.</p></div>
+    <div class="uniq"><b>Why it's here:</b> Arora called models a commoditizing utility layer; Chamath's "machine that makes machines," "models as energy sources," the explicit <b>open-source endgame</b>, and the regulatory-moat durability map are his synthesis across Arora and Ackman, found only in Chamath's reflections.</div>
+  </div>
+</div>
+
+<!-- THOMAS LAFFONT -->
+<div class="card" id="laffont">
+  <div class="top">
+    <div class="meta-row"><span class="tag">Keynote</span><span class="tag cmflag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.5h7.6z"/></svg>Chamath alpha</span></div>
+    <div class="nm">Thomas Laffont</div>
+    <div class="ro">Co-Founder, Coatue Management</div>
+    <div class="hl">
+      <div class="hll">The takeaway</div>
+      <p>Laffont's data-driven read: the unicorn economy is healthier but <b>radically concentrated</b>, and the coming SpaceX / Anthropic / OpenAI exits will dwarf the entire 2021 peak, with hyperscalers now funding their own disruptors.</p>
+      <ul class="pts">
+        <li>Fewer unicorns, each raising far more, <b>funding per unicorn is up 5x since 2021</b>. The "unicorn factory" peaked in the ZIRP bubble and has normalized.</li>
+        <li>A dominant index is emerging, a "<b>Magnificent Eight</b>" (SpaceX, Stripe, Anthropic, Databricks, Revolut, ByteDance and more) collectively nearing <b>$4 trillion</b>, outperforming the public Nasdaq 7.</li>
+        <li><b>SpaceX expected to list within weeks; Anthropic filed a confidential S-1 "today."</b> Those impending IPOs alone may exceed combined exits of the prior decade.</li>
+        <li>The structurally new dynamic: <b>hyperscalers are funding the disruptors</b>. SpaceX valuation tracks <b>launch cadence</b>, evolving from one-off launches to recurring constellation and platform revenue.</li>
+      </ul>
+    </div>
+    <div class="metrics"><span class="metric"><b>~70%</b> unicorn economy ↑ since Sep '24</span><span class="metric"><b>5x</b> funding per unicorn vs '21</span><span class="metric"><b>~$4T</b> "Magnificent Eight"</span><span class="metric"><b>DRAM 5x</b> in 5 years</span><span class="metric"><b>$700B/yr+</b> AI market by '27</span><span class="metric">Memory: <b>"no TSMC"</b> equiv.</span></div>
+    <div class="adds">
+      <div class="al"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>From the organizers' notes</div>
+      <ul class="pts">
+        <li>The cohort data is the spine: the pre-ZIRP cohort (~73 cos) saw ~80% raise or exit by 20 quarters; the <b>2021 cohort (479 cos) is under 20%</b>, over-creation during ZIRP. The 2024 AI cohort is the open question.</li>
+        <li>The AI market is sized at <b>~$140B today → ~$300B in 2026, doubling again by 2027</b>, across consumer subscriptions, AI-enabled ads (~$150B potential), and enterprise (Claude Code, Codex).</li>
+        <li>On indexing: buying the top 10 by market cap and rebalancing annually has historically won over decades, and he calls the "AI models are commodities" claim <b>"thoroughly disproven."</b> <i>(Hold this against Chamath's open-source view above.)</i></li>
+        <li>His SpaceX framework: telco/service-provider profit pools of <b>$200–400B</b> that Starlink's reliability can attack; valuation-per-launch rises as cadence scales.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="exp" data-exp="laffont">
+    <div class="eh" data-toggle><span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></span> Full field notes</div>
+    <div class="ebody">
+      <div class="notesec"><h4>Thesis / argument</h4><p>Venture funding is consolidating into fewer companies raising much more. Unicorn exits peaked 2021, crashed 22–24, climbing 2025–26, mostly M&amp;A with a small IPO share, with the windfall of SpaceX/Anthropic/OpenAI on the horizon; those three will exceed the past 10 years (dwarfing the '21 peak). Hyperscalers are funding the disruptors. The #1 driver of SpaceX valuation is the number of launches; network effects raise value per launch. Companies, sovereigns and nations will all want private constellations. Path to conviction is reanchoring to the numbers themselves.</p></div>
+      <div class="notesec"><h4>Quotes &amp; claims</h4><p>Unicorn economy way up, but so are public markets, its share of the Nasdaq has plateaued. AI dominating fundraising. Unicorn factory cooling, peaked 2021. Fewer unicorns each raising more. ZIRP cohort lagging in exits despite higher count. Funding concentration increasing massively.</p></div>
+      <div class="notesec"><h4>Data points</h4><p>Expecting DRAM demand to 5x in 5 years. AI market $700B/yr+ by 2027. For companies going public, "6 months + 1 day" is the honest reading of true value as lockups release. "If I want chips I go to TSMC; if I want memory, there is no TSMC." Question on what happens when capital is released back to GPs/LPs, at some point excess capital funded price wars (e.g. rideshare).</p></div>
+      <div class="notesec org"><h4 class="org">Organizer notes, additional context</h4><p>Detailed cohort lines and the "Magnificent Eight" basket nearing $4T. AI revenue scaling: passed Workday, then ServiceNow/Adobe, then Salesforce; forecast to overtake Azure and possibly AWS by end-2026, all of Microsoft by 2028. Anthropic reportedly had a profitable month. Passive flows may delay true price discovery to ~6 months post-IPO. Cross-sector disruption flagged: telco, autos (Ferrari tensions), GLP drugs reshaping consumer behavior. Concern: a lack of new centacorns would be a warning sign.</p></div>
+    </div>
+  </div>
+  <div class="cm" data-cm="laffont">
+    <div class="cml"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.5h7.6z"/></svg> Chamath's read</div>
+    <div class="ci"><span class="qn">1</span><p>I'd turn Thomas's data into an explicit <b>trading algorithm</b>: own a huge basket early, <b>concentrate into the names as they grow</b>, and <b>own the entire entity once it surpasses $100 billion</b>. A power-law strategy stated as a rule, not a vibe.</p></div>
+    <div class="ci"><span class="qn">2</span><p>My candid warning on the venture asset class: average returns will <b>look exceptional because of SpaceX distributions</b>, but the <b>median return will remain poor</b>. The liquidity wave forces venture firms to move <b>up to the application layer and down into silicon</b>; the middle is where margins die. Companies at <b>either end of the spectrum have more profit dollars to compete</b>.</p></div>
+    <div class="ci"><span class="qn">3</span><p>On hyperscalers I'm blunt: they're in a <b>complicated position with thin margins</b>, and the Web 1.0/2.0 playbook (high availability, orchestration) is <b>not what AI needs at the datacenter level</b>. AI wants uniformity and simplicity. I credit Elon's AI Cloud success (booking ~$2.25B/month) to <b>sticking to the spec and refusing custom NVIDIA negotiations</b>.</p></div>
+    <div class="uniq"><b>Why it's here:</b> Laffont supplied the concentration data and the SpaceX framework; the explicit <b>$100B ownership algorithm</b>, the <b>mean-vs-median</b> framing, the <b>up-to-apps / down-to-silicon</b> barbell, and the <b>Elon "stick to the spec"</b> attribution are Chamath's reads alone. Note too that Chamath's <b>open-source view</b> sits in interesting tension with Laffont's read that AI models won't commoditize, a debate worth tracking.</div>
+  </div>
+</div>
+
+<!-- BILL MARIS -->
+<div class="card" id="maris">
+  <div class="top">
+    <div class="meta-row"><span class="tag">Keynote</span><span class="tag cmflag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.5h7.6z"/></svg>Chamath alpha</span></div>
+    <div class="nm">Bill Maris</div>
+    <div class="ro">Founder, S32 (founding CEO of Google Ventures)</div>
+    <div class="hl">
+      <div class="hll">The takeaway</div>
+      <p>Maris delivered the contrarian's warning: we're at the <b>"Atari command-line stage of AI,"</b> the real value comes from the machinery around the models (not bigger models), and <b>small funds beat large funds</b>, by the math, not the mood.</p>
+      <ul class="pts">
+        <li>"We're at the Atari command-line stage… we'll reach the PS-10 stage in 5 years." What gaming did over 40 years, AI does in 5, and "<b>I don't plan on investing in larger models.</b>"</li>
+        <li><b>Sub-$750M funds outperform</b>: they make up 95% of top-decile performers; the return math for multi-billion-dollar funds is nearly impossible. The GP incentive to gather fees over generating returns is broken.</li>
+        <li>Core creed: "<b>don't bet against computer science</b>", right CS + right data + right problems yields the right answers.</li>
+        <li>Sharp IPO warning: the coming listings have <b>broken the normal S&amp;P inclusion rules</b>; <b>retail risks holding the bag</b> after lockups release.</li>
+      </ul>
+    </div>
+    <div class="metrics"><span class="metric">Sub-<b>$750M</b> funds outperform</span><span class="metric"><b>95%</b> of top-decile = small funds</span><span class="metric">Value in <b>infra, not bigger models</b></span><span class="metric">Bio winners = <b>science, not yet compute</b></span></div>
+    <div class="adds">
+      <div class="al"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>From the organizers' notes</div>
+      <ul class="pts">
+        <li>The four-lesson spine: pursue what looks like the future even when it requires unconventional acts; "insane" ideas hide a secret about the future; don't bet against computer science; small funds mathematically outperform.</li>
+        <li>The concrete disruption risk: foundational model providers like OpenAI could face <b>severe margin pressure if Google slashes equivalent prices</b>, a direct read-through to the open-source/commoditization debate.</li>
+        <li>The next five years of AI will mirror decades of gaming evolution, the biggest opportunities are <b>"picks and shovels,"</b> the physics engines and controllers, not larger models.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="exp" data-exp="maris">
+    <div class="eh" data-toggle><span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></span> Full field notes</div>
+    <div class="ebody">
+      <div class="notesec"><h4>Thesis / argument</h4><p>Early GV approach: obtain all venture data, use ML to design the ideal portfolio and fund size. Don't bet against computer science. Beware value already created vs. what's left in the IPOs; the coming IPOs have broken the S&amp;P rules; retail at risk of holding the bag. What gaming did over 40 years, AI does in 5. "I don't plan on investing in larger models." It was controllers, physics engines and GPUs, the machinery around the tool, that made the reality bigger. Strange incentives for GPs to take fees and not make a big return yet out-earn a smaller fund that does really well; the pendulum will swing back.</p></div>
+      <div class="notesec"><h4>Quotes &amp; claims</h4><p>Personal story, neuroscience to Wall St to servers to entrepreneurship; tarping the roof in a thunderstorm to keep servers from shorting. Very interested in computational biology. The class of winners so far isn't computation but really good science from 10 years ago. Finding a compound is 5% of the work, titration and FDA approvals are the rest. The US has always indexed on human safety over speed to market. Gutting of CDC and NIH has driven mindshare elsewhere. Sacks: fund size determines fund strategy, 20–25 checks determines check size for diversification.</p></div>
+      <div class="notesec"><h4>Data points</h4><p>Small funds outperform large funds; more focus/attention for founders. Strong argument against valuation durability of the lockup after IPO pricing. Retail investors on the hook for the future price reset. ir-team@s32.com, Fund Size and Return Analysis available on request.</p></div>
+      <div class="notesec org"><h4 class="org">Organizer notes, additional context</h4><p>Sub-$750M funds make up 95% of top-decile performers; multi-billion-dollar funds need exits that can exceed total annual venture-backed exit value to hit 3x. Criticizes firms that tout benefiting humanity while staying private and shifting risk to retail. GOOG could slash prices and pressure model-provider margins.</p></div>
+    </div>
+  </div>
+  <div class="cm" data-cm="maris">
+    <div class="cml"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.5h7.6z"/></svg> Chamath's read</div>
+    <div class="ci"><span class="qn">1</span><p>Here's how we run it: <b>8090 is structured as "systems on a chip" (SOCs) with no hierarchy</b>. Each SOC, say marketing, has defined <b>inputs (money, content) and outputs (leads)</b>, with interconnects to other SOCs like sales. That design is a big part of why the firm is effective, a concrete operating model behind the abstract "AI-native company" talk.</p></div>
+    <div class="ci"><span class="qn">2</span><p>On the fund-size debate, I'd resolve the tension rather than pick a side. There's a real conflict between <b>Thomas's view (bigger is better for raw dollar tonnage)</b> and <b>Bill's view (smaller funds win on IRR)</b>, and <b>both are true</b>. They're optimizing different objective functions. And Bill is an <b>exceptional investor</b>, even if venture is, as he says, "a statistically bad asset class."</p></div>
+    <div class="uniq"><b>Why it's here:</b> Maris made the small-funds case; the <b>"systems on a chip" operating model for 8090</b> and the explicit <b>"both are true" reconciliation</b> of the Laffont–Maris tension are Chamath's own, not in Maris's talk or the organizer notes.</div>
+  </div>
+</div>
+
+<!-- DAN LOEB -->
+<div class="card" id="loeb">
+  <div class="top">
+    <div class="meta-row"><span class="tag">Keynote</span><span class="tag cmflag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.5h7.6z"/></svg>Chamath alpha</span></div>
+    <div class="nm">Dan Loeb</div>
+    <div class="ro">Founder &amp; CEO, Third Point</div>
+    <div class="hl">
+      <div class="hll">The takeaway</div>
+      <p>Loeb's edge is increasingly qualitative: in a market where bad shorts get squeezed and great assets stay private, the durable alpha is <b>judging management and moats</b>, and there's still rich opportunity on the short side, including homebuilding's post-COVID hangover.</p>
+      <ul class="pts">
+        <li><b>Management incentives are the tell</b>, the best entry points came when comp packages were sandbagged. Finding great, adaptable teams is the hard-to-quantify edge.</li>
+        <li><b>Moats and durability are everything</b>; the "time value" of a company, will it survive, is the crucial lens right now.</li>
+        <li>Plenty of opportunity <b>on the short side</b>, but avoid pure-valuation shorts, too many "run over by shorts with dumb valuations that get captured on Reddit." Some space names fit.</li>
+        <li>Contrarian on a consensus short: he argues <b>Nvidia is undervalued</b>, mis-processed as a "safe short" the way Amazon and Google once were.</li>
+      </ul>
+    </div>
+    <div class="metrics"><span class="metric"><b>$9B</b> flagship hedge fund</span><span class="metric">Short: <b>homebuilding supply</b></span><span class="metric">Caution on <b>space names</b> (short)</span><span class="metric"><b>NVDA undervalued</b> (contra)</span></div>
+    <div class="adds">
+      <div class="al"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>From the organizers' notes</div>
+      <ul class="pts">
+        <li>His arc: from anonymous internet chat boards as an activist, to distressed-debt reps, to a multi-strategy fund, evolving from event-driven complexity toward business quality and innovation.</li>
+        <li>Assessing management is a <b>subjective, qualitative skill built over decades of pattern recognition</b>, the part he believes resists automation.</li>
+        <li>Significant philanthropic thread: education reform and criminal-justice reform, including his role in securing the <b>Ross Ulbricht pardon</b>.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="exp" data-exp="loeb">
+    <div class="eh" data-toggle><span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></span> Full field notes</div>
+    <div class="ebody">
+      <div class="notesec"><h4>Thesis / argument</h4><p>Management incentives are key, when packages were sandbagged it was a better time to get in. Greater focus on business quality, innovation and disruption; more thematic on consumer trends, financial services and the culmination into AI. Time spent primarily on the $9B hedge fund. The social/human element of capturing opportunities never goes away; agents support but humans stay in the loop. Moats and durability are everything; the time value of companies tells you which survive.</p></div>
+      <div class="notesec"><h4>Quotes &amp; claims</h4><p>Fun in identifying fraudulent companies, a factoring company trading at multiples of book, a repeat fraudster they unearthed. Got serious at Jefferies on distressed debt, 10k hours/reps built intuition. Mentorship comes from colleagues and customers, not just elders. Event-driven investing was less about business quality, more about complex transactions with unbelievable alpha from dislocation.</p></div>
+      <div class="notesec"><h4>Data points</h4><p>Lots of opportunities on the short side. Avoid solely valuation-based shorts, too many run over by dumb-valuation shorts captured on Reddit; some space companies fit. Strong view on homebuilders.</p></div>
+      <div class="notesec org"><h4 class="org">Organizer notes, additional context</h4><p>Successfully shorted homebuilders by identifying a post-COVID inventory overhang and structural impairment (pretending to be asset-light while committed to massive land pools). Argues Nvidia is undervalued, treated as a "safe short" akin to past skepticism of Amazon and Google. Deep philanthropic focus on education and criminal justice, culminating in the Ulbricht pardon.</p></div>
+    </div>
+  </div>
+  <div class="cm" data-cm="loeb">
+    <div class="cml"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.5h7.6z"/></svg> Chamath's read</div>
+    <div class="ci"><span class="qn">→</span><p>What I take from Dan is a meta-pattern: there are recurring <b>waves of individuals who shape investor sentiment</b>, and the <b>medium changes over time</b>, from anonymous forums, to public activist letters, to today's social platforms. Dan has been part of <b>all three cycles</b> of that shift. The trade implication in the current regime: the <b>marginal trade is "up,"</b> which makes <b>being short very dangerous</b> right now.</p></div>
+    <div class="uniq"><b>Why it's here:</b> Loeb told his own story; Chamath's framing of him as a three-cycle case study in sentiment-shaping, and the "marginal trade is up / shorting is dangerous" conclusion, are Chamath's reads, not stated by Loeb or the organizers.</div>
+  </div>
+</div>
+
+<!-- ===================== DAY 2, BESTIES ===================== -->
+<div class="sectit" id="besties"><div class="dh"><h2>Tuesday, June 2, The Besties open Day 2</h2><span class="meta">Framing</span></div>
+<p class="lede">Chamath, Friedberg and Calacanis opened the second day by reframing the whole event around the coming liquidity wave. Captured as one session, since it ran as one conversation.</p></div>
+
+<div class="grouphead"><div class="gt">Tuesday morning framing</div><div class="gd">"Yesterday was level-setting; today is the front-runners." The hosts set the barbell thesis that the panels would then stress-test.</div></div>
+
+<div class="card" id="besties">
+  <div class="top">
+    <div class="meta-row"><span class="tag bestie">Besties</span></div>
+    <div class="nm">Chamath · Friedberg · Calacanis</div>
+    <div class="ro">All-In hosts, Day 2 opening framing</div>
+    <div class="hl">
+      <div class="hll">The takeaway</div>
+      <p>The hosts reframed the event around a coming liquidity wave: as the mega-IPOs return tens of billions to LPs, a <b>barbell</b> of capital forms, proven managers on one side, a swarm of emerging micro-managers on the other, while "<b>as goes AI, so goes GDP and energy.</b>"</p>
+      <ul class="pts">
+        <li><b>Chamath:</b> capitalism is alive and well, global institutions have failed and this room should build the new ones. AI is bifurcating into enterprise and consumer profit pools, both good. "The US can't borrow at 100 years, but Google can."</li>
+        <li><b>Friedberg:</b> the IPO wave leaves LPs asking what to do with returned capital, expect a barbell of reliable capital plus many small bets on emerging managers who, if they hit, become the other end. On Google: <b>cost of equity now cheaper than debt</b>, ~27x EBITDA.</li>
+        <li><b>Calacanis:</b> OpenAI isn't as reactive to Anthropic as assumed, it has its own gameplan.</li>
+      </ul>
+    </div>
+    <div class="metrics"><span class="metric">GOOG <b>~27x EBITDA</b>, equity &lt; debt</span><span class="metric"><b>$122B</b> OpenAI raise (recurring)</span><span class="metric">Barbell: <b>proven + emerging micros</b></span></div>
+  </div>
+  <div class="exp" data-exp="besties">
+    <div class="eh" data-toggle><span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></span> Full field notes</div>
+    <div class="ebody">
+      <div class="notesec"><h4>Chamath</h4><p>Capitalism alive and well. Drawing inspiration from the Koch brothers, we need to mirror that and do better. The global institutions have failed; we need to build new ones from the people in this room. Yesterday was level-setting, high context; today is the front-runners. As goes AI, so goes GDP and energy. AI is bifurcating, profit pools are enterprise and consumer, and both are good. The US can't borrow at 100 years, but Google can.</p></div>
+      <div class="notesec"><h4>Friedberg</h4><p>Recurring theme: the massive wave of liquidity from the upcoming IPOs. Institutional LPs receiving capital back face the question of what to do with it. A growing class of micromanagers, a barbell of proven reliable money on the stable side, plus many small contributions to emerging managers; if those hit, they become the other side of the barbell. More props to Sarah, the $122B raise, the largest ever. On Google, cost of equity cheaper than debt right now, trading at 27x EBITDA.</p></div>
+      <div class="notesec"><h4>Calacanis</h4><p>OpenAI is not as reactive to Anthropic as assumed and has its own gameplan.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== DAY 2, PANELS ===================== -->
+<div class="sectit" id="d2"><div class="dh"><h2>Tuesday, June 2, Panels &amp; Day 2 Keynote</h2><span class="meta">AI infra · energy · liquidity</span></div>
+<p class="lede">The afternoon turned the macro into mechanics: where compute physically goes, what powers it, and how the liquidity actually clears. These sessions are sourced primarily from the conference organizers' notes.</p></div>
+
+<!-- DAN DREYFUS KEYNOTE -->
+<div class="card" id="dreyfus_keynote">
+  <div class="top">
+    <div class="meta-row"><span class="tag">Keynote · Energy</span></div>
+    <div class="nm">Dan Dreyfus, The Inflection Point of US Energy</div>
+    <div class="ro">Bornite Capital</div>
+    <div class="hl">
+      <div class="hll">The takeaway</div>
+      <p>Dreyfus made the materials case underneath the entire AI story: after decades of "capital-light" growth and offshoring, the US faces a <b>demand shock (reindustrialization + AI + EVs + defense) colliding with a supply shock</b> (decades of underinvestment), a structural, multi-decade commodity cycle, not a trade. Copper is the cleanest expression.</p>
+      <ul class="pts">
+        <li>The headline math: humanity mined <b>700M tons of copper over 10,000 years; the next 18 years need another 700M</b>, requiring <b>five new tier-one mines online every year</b> when new mines take 7–12 years. He expects copper to <b>at least double</b>.</li>
+        <li>Simultaneous trillion-dollar capital cycles: aerospace ($1T+ backlog), the aging grid ($1T+ every few years), datacenters (~$1T/yr), semiconductor fabs ($750B+) and rising defense, all dependent on <b>critical minerals China largely controls</b>.</li>
+        <li>The durable chokepoint is <b>processing, not raw materials</b>, China dominates it, and US catch-up takes 10–20 years even with aggressive Dept. of War / Dept. of Energy backing.</li>
+        <li><b>Silver runs a 200M-oz annual deficit</b> against ~600M oz above-ground inventory, a credible stock-out in ~3 years. The under-appreciated bottleneck across all of it: <b>skilled craft labor</b>.</li>
+      </ul>
+    </div>
+    <div class="metrics"><span class="metric">Copper: <b>700M tons</b> needed in 18 yrs</span><span class="metric"><b>5 tier-one mines/yr</b> required</span><span class="metric"><b>50,000 tons</b> copper / 1GW datacenter</span><span class="metric">Silver: <b>200M oz</b> annual deficit</span><span class="metric">Mine lead time <b>7–12 yrs</b></span></div>
+    <div class="adds">
+      <div class="al"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>The financial overlay</div>
+      <ul class="pts">
+        <li>The debasement thesis: against <b>$40T of US debt (rising $2.5T/yr)</b> and ~$100T of unfunded liabilities versus $5.5T of annual receipts, the next recession requires printing "gigadollars", echoing the 1970s, when the dollar lost <b>70% of purchasing power</b>.</li>
+        <li>The play: exposure to <b>copper, silver, other minerals, and the service providers and skilled labor</b> supporting reindustrialization, hard assets as the cleanest purchasing-power hedge.</li>
+        <li>Copper intensity makes the AI link concrete: solar uses 5x more copper/MW than gas, wind 7x; EVs 5–6x more than ICE; military copper isn't recycled.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="exp" data-exp="dreyfus_keynote">
+    <div class="eh" data-toggle><span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></span> Full notes (organizer-sourced)</div>
+    <div class="ebody">
+      <div class="notesec org"><h4 class="org">Thesis</h4><p>From the early 2000s the US enjoyed a "capital-light" miracle (Google, Meta, streaming, SaaS, Apple) while dismantling and offshoring critical infrastructure to China. Geopolitical shocks (COVID, Russia-Ukraine, Iran) exposed fragile supply chains and drove inflation, pushing the US to reshore and reindustrialize while supporting an infrastructure-intensive compute revolution, creating a demand shock that collides with decades of underinvestment.</p></div>
+      <div class="notesec org"><h4 class="org">Capital cycles &amp; commodity demand</h4><p>Aerospace ($1T Boeing/Airbus backlog plus the space economy); the aging grid (ERCOT failures, a 106-year-old California line, $1T+ every few years for 30 years); datacenters ($1T/year); semiconductor fabs ($750B and likely into the trillions); rising global defense, all running simultaneously, all dependent on critical minerals China largely controls and has restricted (samarium, gadolinium, platinum, silver; Ford nearly halted production over cobalt magnets).</p></div>
+      <div class="notesec org"><h4 class="org">The copper crisis &amp; bottlenecks</h4><p>A 1GW AI datacenter needs 50,000 tons of copper (15 GW/year = 750,000 tons, more than last year's entire global supply growth of 500,000 tons). New mines take 7–12 years; legacy Chilean mines are 100+ years old with declining grades. Depts. of War and Energy are backing small US/Canadian resource owners with equity, fast-tracked permits and floor-price off-takes, but catching China on processing takes 10–20 years. Silver: 1.2B oz consumed vs 1.0B supplied, ~600M oz above-ground, potential stock-out in ~3 years. Rare earths are abundant; the chokepoint is processing. Biggest bottleneck overall: skilled craft labor.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- IPO / INFRASTRUCTURE PANEL -->
+<div class="card" id="panel1">
+  <div class="top">
+    <div class="meta-row"><span class="tag">Panel · IPO &amp; Infra</span></div>
+    <div class="nm">AI Infrastructure &amp; Going Public</div>
+    <div class="ro">Brad Gerstner (Altimeter) · Andrew Feldman (Cerebras) · Will Marshall (Planet Labs)</div>
+    <div class="hl">
+      <div class="hll">The takeaway</div>
+      <p>Two freshly public founders on what the IPO actually changes (less than you'd think) and the secular trends underneath them: compute is a <b>data-movement and power problem</b>, and within a decade most new compute may move to <b>space</b>, where 24/7 solar and falling launch costs flip the economics.</p>
+      <ul class="pts">
+        <li><b>Feldman (Cerebras):</b> the hard part of AI is moving data from memory to compute, wafer-scale puts fast memory next to compute for a <b>10–20x</b> leap over a GPU. Going public was bureaucratic "garbage," but the day after, the business is unchanged; the real payoff was <b>validation for employees and their families</b>.</li>
+        <li><b>Marshall (Planet):</b> AI models are "blind" to the real world, the next frontier is <b>real-time planetary intelligence</b> ("Large Earth Models"). Public-company credibility matters most with <b>governments and large enterprises</b>; security/defense is now ~60% of revenue.</li>
+        <li><b>Space datacenters:</b> driven by a <b>4–5x drop in launch costs</b> and satellite miniaturization (the mainframe-to-desktop transition), Marshall predicts <b>most new compute is built in space within a decade</b>, cheaper via constant solar.</li>
+        <li><b>Gerstner:</b> a16z's push to stay private longer hurt retail upside, a trend that may now be reversing; Planet is a public-venture-style success.</li>
+      </ul>
+    </div>
+    <div class="metrics"><span class="metric">Cerebras <b>10–20x</b> a GPU</span><span class="metric">Launch costs <b>down 4–5x</b>/10y</span><span class="metric">Planet: <b>~60%</b> rev = defense/security</span><span class="metric">Space compute <b>within 10 yrs</b></span></div>
+    <div class="adds">
+      <div class="al"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>Worth underlining</div>
+      <ul class="pts">
+        <li>Feldman's two founding bets, stated cleanly: <b>AI needs dedicated silicon, and that silicon cannot resemble a GPU</b>, to be 20x better it had to look fundamentally different.</li>
+        <li>"Historically, more value is created for investors <b>after</b> a company's IPO than before", a direct counter to the Maris "retail holds the bag" warning, and a tension worth holding.</li>
+        <li>Marshall's frame: AI moves <b>beyond language models to real-world sensing data</b>, the same architectural leap, applied to the planet.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="exp" data-exp="panel1">
+    <div class="eh" data-toggle><span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></span> Full notes (organizer-sourced)</div>
+    <div class="ebody">
+      <div class="notesec org"><h4 class="org">Andrew Feldman (Cerebras)</h4><p>Going public involves tremendous low-value "garbage" work, but the day after, core operations are unchanged. The IPO was a major life-milestone moment of validation for employees and families. The key was two bets: AI requires dedicated silicon, and that silicon couldn't look like a GPU. The fundamental problem in AI computing is moving data from memory to compute, solved by a dinner-plate-sized wafer placing fast memory next to compute, enabling real-time AI (10–20x over a GPU). Historically more investor value is created after the IPO than before.</p></div>
+      <div class="notesec org"><h4 class="org">Will Marshall (Planet Labs)</h4><p>Being public provides essential credibility to large governments and enterprises who need long-term viability assurance. The business has shifted, security and defense now ~60% of revenue. The space revolution is driven by a 4–5x launch-cost reduction plus miniaturization, mirroring mainframe-to-desktop. Within ten years, most computing infrastructure will be built in space, cheaper via constant solar and reduced infrastructure needs. The next evolution of AI moves beyond LLMs to "Large Earth Models" trained on real-world planetary sensing data; today's models are "blind" to the real world.</p></div>
+      <div class="notesec org"><h4 class="org">Brad Gerstner (Altimeter)</h4><p>Cerebras's path to public was especially hard (UAE investment, CFIUS); "everything was hard until it was easy." a16z was a strong voice to stay private longer, a net negative to retail participation in the upside, a trend that may be switching. Planet is a great public-venture-style success.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- SECONDARY / MARKETS PANEL -->
+<div class="card" id="panel2">
+  <div class="top">
+    <div class="meta-row"><span class="tag">Panel · Liquidity</span><span class="tag cmflag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.5h7.6z"/></svg>Chamath alpha</span></div>
+    <div class="nm">Secondary &amp; Public/Private Markets</div>
+    <div class="ro">Brad Gerstner (Altimeter) · Kelly Rodriques (Forge/Schwab) · Gavin Baker (Atreides)</div>
+    <div class="hl">
+      <div class="hll">The takeaway</div>
+      <p>The summit's namesake panel: secondaries have flipped from discount to premium and become a <b>third exit path</b>, long-only funds are about to unleash hundreds of billions into pre-IPO names, and the besties openly worried, with Gerstner selling into record volume and Chamath asking whether <b>retail becomes the exit liquidity</b>.</p>
+      <ul class="pts">
+        <li><b>The structural shift:</b> long-only mutual funds can hold up to 15% in privates but historically cap at 3–5%; as the giants list, that unlocks <b>hundreds of billions</b> from the largest pools in the world.</li>
+        <li><b>Secondaries are now an asset class</b>, trading at a <b>premium to NAV (volume doubled vs. the 2021 peak)</b>, with Schwab/Forge building the regulated infrastructure to reach ~30–46M investors and $12T in assets.</li>
+        <li><b>The caution signal:</b> Gerstner has turned measured, "when people tell you to YOLO into SPVs, it's time to be careful", and is <b>selling into the global secondary market at record volume</b>.</li>
+        <li><b>Baker:</b> secondaries are necessary for employee liquidity ("paper rich, cash poor"), and companies should go public sooner for the <b>rigorous feedback</b> that the sycophantic private market lacks. Funds without OpenAI/Anthropic/SpaceX are "doing unusual things", writing call options, chasing, out of DPI fear.</li>
+      </ul>
+    </div>
+    <div class="metrics"><span class="metric">Secondaries: <b>volume 2x</b> the '21 peak</span><span class="metric">Long-only privates cap <b>3–5% → 15%</b></span><span class="metric">Schwab: <b>30–46M</b> investors, <b>$12T</b></span><span class="metric">Mean great / <b>median garbage</b></span></div>
+    <div class="adds">
+      <div class="al"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>The names &amp; the nuance</div>
+      <ul class="pts">
+        <li>Tokenization can make secondary and fund trading more efficient, but LPs likely prefer <b>liquidity in specific winners</b> over whole fund interests.</li>
+        <li>Secondary opportunities the panel named: <b>Revolut</b> (neobank), <b>Zipline</b> (drone delivery), <b>Sierra</b> (Brett Taylor's agent platform), Aria/DriveNets (inference disaggregation, networking), <b>NeuraRobotics</b> (European logistics robotics, ~$100M rev), and <b>Vast</b> (space stations).</li>
+        <li>Rodriques' frame: an eventual private-to-public path for all; retail entering should look <b>downstream to names "not on CNBC yet."</b></li>
+      </ul>
+    </div>
+  </div>
+  <div class="exp" data-exp="panel2">
+    <div class="eh" data-toggle><span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></span> Full field notes</div>
+    <div class="ebody">
+      <div class="notesec"><h4>Thesis / argument</h4><p>When you're CEO of a private company you're the most special flower to your board; once public you're one of thousands. Private markets are sycophantic, the best CEOs seek out truth, and public-market feedback supplies it. Long-only mutual funds will unleash hundreds of billions into companies as they go public and become unrestricted. Right now everything in tech is pretty fully valued, with signal we're not at the bottom.</p></div>
+      <div class="notesec"><h4>Quotes &amp; claims</h4><p>Gavin: if companies stay private longer, the shift in secondary markets is necessary, for the paper-rich/cash-poor it's important. No good reason to stay private longer. Mark Zuckerberg has said he'd have benefited from public-market pressure-testing. For venture funds, if you're not in the big upcoming IPOs you won't have returns or DPI; funds without Anthropic/OpenAI/SpaceX are doing unusual things, writing call options, chasing. Long-only funds can allocate up to 15% to privates but historically cap at 3–5% for regulatory reasons. Brad: more measured as his profile rose; just had two of the biggest months in 10 years; selling into the global secondary market at record volume. "14 ETFs levered to SpaceX is a signal of froth." Better comparison is 2021-to-today than 1999.</p></div>
+      <div class="notesec"><h4>Data points</h4><p>Secondaries now trading at a premium rather than a discount to NAV; transaction volume has roughly doubled since the 2021 peak. Schwab represents 30–46M investors and $12T in assets. Forge got its first SPVs in 2018/2019 as companies neared IPOs.</p></div>
+      <div class="notesec org"><h4 class="org">Organizer notes, additional context</h4><p>Secondaries framed as a crucial third exit path beside IPOs and M&amp;A, providing DPI to LPs. Major institutions (Schwab) entering signals a formal asset class accessible to accredited and, via fund products, non-accredited investors. Venture outcomes: strong mean, weak median, pressuring firms without trillion-dollar-leader exposure. An infrastructure supercycle in networking and specialized silicon is emerging, requiring disaggregation and new architectures to orchestrate heterogeneous chips.</p></div>
+    </div>
+  </div>
+  <div class="cm" data-cm="panel2">
+    <div class="cml"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.5h7.6z"/></svg> Chamath's read</div>
+    <div class="ci"><span class="qn">→</span><p>There are two things I distrust about secondaries. First, the <b>illiquidity itself</b>: I can't easily sell, it's complicated and slow, and I'd ask Kelly directly how you actually build the infrastructure to sell this at scale. Second, the distributional truth: when the IPOs come, <b>the mean venture return will be amazing but the median will be garbage</b>. So the real question is, <b>are we comfortable with retail being the exit capital?</b></p></div>
+    <div class="uniq"><b>Why it's here:</b> Chamath's mean-vs-median framing and the blunt "is retail the exit capital?" challenge are the sharpest expression of the conference's central anxiety, captured as his read in the LWM field notes, and the throughline of the All-In panel reflection below.</div>
+  </div>
+</div>
+
+<!-- ALL-IN PANEL barbell note as compact card -->
+<div class="card" id="allin">
+  <div class="top">
+    <div class="meta-row"><span class="tag bestie">All-In</span></div>
+    <div class="nm">All-In Panel, the barbell, restated</div>
+    <div class="ro">Chamath · Friedberg · Kell · J. Cal</div>
+    <div class="hl">
+      <div class="hll">The takeaway</div>
+      <p>The hosts closed the loop on their opening: the practical response to the liquidity wave is a <b>barbell, move toward big, trusted entities on one end and emerging micros on the other</b>, and avoid the squeezed middle. It's the same structure Friedberg framed in the morning and that Laffont's concentration data and Chamath's "own the entity past $100B" rule both point toward.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== PITCH BLOCK ===================== -->
+<div class="sectit" id="pitches"><div class="dh"><h2>Best-Ideas Pitch Block</h2><span class="meta">4 pitches · judge Q&amp;A</span></div>
+<p class="lede">Four high-conviction ideas, each pitched to the judges. Notably off-theme: only one is a direct AI play. <b>Dreyfus (Talen) won the audience vote; Cowen (MGM) won the Bestie vote.</b></p></div>
+
+<div class="grouphead"><div class="gt">The four pitches</div><div class="gd">Each captured with the thesis, the key numbers, and the judge Q&amp;A. The cross-conference reading: in a room crowded into compute and energy, two of the four winners were scarcity plays betting that the US can lock China out of a supply chain, a thesis the room found compelling and the next decade will test.</div></div>
+
+<!-- COWEN / MGM -->
+<div class="card" id="pitch_cowen">
+  <div class="top">
+    <div class="meta-row"><span class="tag pitch">Pitch · Bestie vote</span></div>
+    <div class="nm">Aaron Cowen, MGM Resorts</div>
+    <div class="ro">Suvretta Capital (ex-CIO for Steve Cohen, ex-Soros)</div>
+    <div class="hl">
+      <div class="hll">The takeaway</div>
+      <p>Long MGM, not a Vegas bet but a <b>sum-of-the-parts</b> story: an approved <b>Osaka casino license</b> and a Dubai optionality asset sit inside a company where <b>Barry Diller owns ~26%</b> and management has bought back roughly half the float in six years.</p>
+      <ul class="pts">
+        <li><b>Osaka IR:</b> MGM owns 40% and will manage; ~<b>$2B potential EBITDA</b>. Japan's ~$40B gambling market rivals Macau and exceeds Vegas, and sits closer to Chinese demand than Macau or Singapore.</li>
+        <li><b>Dubai optionality:</b> ~300,000 sq ft reserved for gaming conversion pending legalization; Wynn's 2028 opening may catalyze the policy change.</li>
+        <li><b>Capital structure:</b> Barry Diller's ~26% stake (and a $48 bid) plus aggressive buybacks reducing float support the valuation.</li>
+        <li><b>Timing:</b> markets typically price casino expansions ~3 years pre-opening; Osaka's 2030 schedule points to recognition around <b>2027</b>.</li>
+      </ul>
+    </div>
+    <div class="metrics"><span class="metric"><b>~26%</b> owned by Barry Diller</span><span class="metric">Osaka: <b>~$2B</b> potential EBITDA</span><span class="metric">Japan market <b>~$40B</b></span><span class="metric">~<b>50%</b> float bought back / 6 yrs</span></div>
+    <div class="adds">
+      <div class="al"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>Q&amp;A &amp; nuance</div>
+      <ul class="pts">
+        <li>Judge questions centered on credit and entertainment modeling; answers leaned on MGM's <b>customer database and loyalty program</b> as the engine for international scaling.</li>
+        <li>The off-theme appeal: a <b>regulatory-optionality</b> play (Japan ramp + Dubai legalization) on top of a buyback, exactly the kind of non-AI idea that can win when capital is crowded into compute.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="exp" data-exp="pitch_cowen">
+    <div class="eh" data-toggle><span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></span> Full notes</div>
+    <div class="ebody">
+      <div class="notesec"><h4>Thesis / argument</h4><p>MGM is mostly thought of as a Vegas hotel chain. Vegas is improving, but the pitch isn't about Vegas, it's the hidden assets. Barry Diller owns ~26%; 80% of his NAV is now MGM; MGM bought ~50% of float in 6 years. Two hidden assets: (1) a license to open a casino in Japan, a massive market, closer to Beijing/Shanghai than Macau/Singapore; (2) a Dubai property (Aria + MGM + Bellagio, ~300k sq ft) where gambling is currently illegal, a big unlock if legalized.</p></div>
+      <div class="notesec org"><h4 class="org">Organizer detail</h4><p>Osaka IR: MGM owns 40% and will manage, ~$2B potential EBITDA; Japan's gambling market (~$40B) rivals Macau and exceeds Vegas. Dubai: 300,000 sq ft reserved for gaming conversion pending legalization, with Wynn's 2028 opening a potential catalyst. Markets typically price casino expansions ~3 years pre-opening; Osaka's 2030 schedule implies recognition ~2027. Loyalty-driven operating leverage underpins international scaling. Cowen won the Bestie vote.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- DREYFUS / TALEN -->
+<div class="card" id="pitch_dreyfus">
+  <div class="top">
+    <div class="meta-row"><span class="tag pitch">Pitch · Audience winner</span></div>
+    <div class="nm">Dan Dreyfus, Talen Energy (TLN)</div>
+    <div class="ro">Bornite Capital</div>
+    <div class="hl">
+      <div class="hll">The takeaway</div>
+      <p>Long Talen, buy a <b>hard power asset at half replacement value</b> into a structural, multi-decade power shortage that <b>doesn't even need AI to work</b>. The application of his macro keynote to a single name; it won the audience vote.</p>
+      <ul class="pts">
+        <li>Core: "You don't need AI demand to keep power tight for the next 20 years." Buy a hard asset <b>below replacement cost</b>, hold, sell at a premium when the market wakes up.</li>
+        <li>Talen = <b>2GW nuclear + 6GW gas</b>, trading at <b>~half replacement value</b>.</li>
+        <li>Multiple FCF paths: rising power prices, datacenter contracts, and new capacity; hyperscaler desperation for firm power (e.g., the Three Mile Island revival) drives base-load value whether in front of or behind the meter.</li>
+        <li>On the AI-electricity-price question he used a "highway" analogy: you don't need all lanes at 4am but you do at peak, PPAs with datacenters fund batteries to manage peaking.</li>
+      </ul>
+    </div>
+    <div class="metrics"><span class="metric"><b>2GW nuclear + 6GW gas</b></span><span class="metric">Trading at <b>~50% of replacement</b></span><span class="metric">Works with <b>zero AI demand growth</b></span><span class="metric">Co-location <b>not required</b> (base case)</span></div>
+    <div class="adds">
+      <div class="al"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>Q&amp;A</div>
+      <ul class="pts">
+        <li>On regulatory risk and multiples: a blended <b>15x</b> as a safe assumption, uncontracted merchant power should trade lower, more contracts earn a higher multiple.</li>
+        <li>Co-location of power is <b>not needed for the base scenario</b>, addressing a common objection up front.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="exp" data-exp="pitch_dreyfus">
+    <div class="eh" data-toggle><span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></span> Full notes</div>
+    <div class="ebody">
+      <div class="notesec"><h4>Thesis / argument</h4><p>We don't need AI demand to keep power tight for the next 20 years. Buy a hard asset below replacement cost, hold, and sell at a big premium when the market wakes up. 2GW nuclear and 6GW gas; TLN trades at half replacement value. Those who understand the supply chain are in panic mode, we don't have the raw materials for what's coming.</p></div>
+      <div class="notesec"><h4>Q&amp;A</h4><p>Regulatory risk and the AI view of electricity prices, answer: the highway analogy; PPAs with datacenters fund batteries to manage peaking; bills go up but stay under control. Co-location not needed for the base scenario. Multiples, 15x as a blended figure; uncontracted merchant lower, more contracts higher.</p></div>
+      <div class="notesec org"><h4 class="org">Organizer detail</h4><p>Exploding electricity demand from AI/datacenters; tight power markets for decades even without AI; constrained supply chains keep prices elevated with mandatory build-out of nuclear, gas and renewables. Talen undervalued vs. replacement; multiple FCF paths. Hyperscaler desperation for firm power (Three Mile Island revival). Dreyfus won the audience vote.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- NODELMAN / AKTIS -->
+<div class="card" id="pitch_nodelman">
+  <div class="top">
+    <div class="meta-row"><span class="tag pitch">Pitch</span></div>
+    <div class="nm">Oleg Nodelman, Aktis Oncology (AKTS)</div>
+    <div class="ro">EcoR1 Capital (SF-based value bio fund)</div>
+    <div class="hl">
+      <div class="hll">The takeaway</div>
+      <p>Long Aktis, a <b>precision radiotherapy</b> ("autonomous cancer-cell assassination") play whose moat is the <b>radioisotope supply chain itself</b>: because the input is a byproduct of US nuclear-weapons waste, it's effectively off-limits to China. Price target $200.</p>
+      <ul class="pts">
+        <li>AKTS delivers cell-limited radiation via actinium payloads on mini-proteins, the latest step in cancer treatment (surgery → chemo → targeted → immuno → precision radio). Clinical trials began last year.</li>
+        <li><b>The moat:</b> the modality is very hard to replicate, and because it relies on <b>radioisotopes sourced from US nuclear-program waste</b>, China is locked out of the supply chain.</li>
+        <li>De-risked via <b>validated targets and imaging-confirmed delivery</b> early in trials, with a strong cash runway.</li>
+        <li>Big pharma is a hungry built-in acquirer (Lilly, Bristol, Novartis named) for radiotherapy assets. <b>Price target $200.</b></li>
+      </ul>
+    </div>
+    <div class="metrics"><span class="metric">Target <b>$200</b></span><span class="metric">Moat = <b>US nuclear-waste isotopes</b></span><span class="metric">China <b>locked out</b></span><span class="metric">Acquirers: <b>Lilly · Bristol · Novartis</b></span></div>
+    <div class="adds">
+      <div class="al"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>Q&amp;A</div>
+      <ul class="pts">
+        <li>On the China moat: the answer anchored on <b>supply-chain constraints</b>, the input radio-element is a byproduct of US nuclear-program waste.</li>
+        <li>EcoR1's edge is a <b>margin of safety, deep diligence, and activist involvement</b> in a sector that "feels more like a casino than a financial market." On AI disruption: a small internal AI skunkworks.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="exp" data-exp="pitch_nodelman">
+    <div class="eh" data-toggle><span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></span> Full notes</div>
+    <div class="ebody">
+      <div class="notesec"><h4>Thesis / argument</h4><p>AKTS, cancer therapy. Treatment history: surgery/radiation → chemo → targeted → immunotherapy → precision radiotherapy (autonomous cancer-cell assassination). Clinical trials started last year. Big pharma is hungry for radiotherapy assets. The modality is very hard to replicate, and because it involves radioisotopes it's off-limits to China. Price target $200. EcoR1 focuses on margin of safety, deep diligence and activist investing.</p></div>
+      <div class="notesec"><h4>Q&amp;A</h4><p>Moat vs. China, anchored on supply-chain constraints (the input is a US nuclear-program waste byproduct). On extending lifetime in our lifetime, "take the over." On AI disruption, a small skunkworks project inside AKTS.</p></div>
+      <div class="notesec org"><h4 class="org">Organizer detail</h4><p>Modern radiopharmaceuticals (actinium payloads via mini-proteins) deliver cell-limited radiation. De-risking via validated targets and imaging-confirmed delivery early in trials; strong cash runway and sector M&amp;A interest (Lilly, Bristol, Novartis). Sector moat from difficulty replicating radiopharma and controlled radioisotopes; US supply advantages.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- SAMANI / GEODNET -->
+<div class="card" id="pitch_samani">
+  <div class="top">
+    <div class="meta-row"><span class="tag pitch">Pitch</span></div>
+    <div class="nm">Kyle Samani, GEODNET</div>
+    <div class="ro">Multicoin Capital / Chairman, Forward Industries</div>
+    <div class="hl">
+      <div class="hll">The takeaway</div>
+      <p>Long GEODNET, a <b>crypto-incentivized DePIN</b> that has bootstrapped the world's largest and fastest-growing precise-location (RTK) network, monetizing into precision agriculture and consumer robotics, while routing <b>80% of corporate revenue to token buybacks</b>.</p>
+      <ul class="pts">
+        <li><b>GEODNET</b> = decentralized RTK delivering centimeter-level accuracy, built on home-deployed base stations, the largest and fastest-growing such network in the world.</li>
+        <li>Demand drivers: <b>precision agriculture</b>, a supplier relationship to <b>TomTom</b> (which supplies AV companies), drones, robotics, and the next wave of <b>consumer robotics</b> (robotic mowers, ~1M units estimated this year).</li>
+        <li><b>Capital-efficient flywheel:</b> ~80% of corporate revenue contractually used to buy back tokens, effectively a securitized revenue share to holders.</li>
+        <li><b>Traction:</b> revenue run-rate ~$11M, <b>3x YoY growth</b>, FDV ~$150M viewed as undervalued.</li>
+      </ul>
+    </div>
+    <div class="metrics"><span class="metric"><b>80%</b> of revenue → token buybacks</span><span class="metric"><b>3x</b> YoY revenue growth</span><span class="metric">~<b>$11M</b> run-rate · <b>$150M</b> FDV</span><span class="metric">Mowers: <b>~1M</b> units this yr</span></div>
+    <div class="adds">
+      <div class="al"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>Q&amp;A</div>
+      <ul class="pts">
+        <li>On the competitive stance: ground-based RTK wins on <b>cost and energy vs. microsatellite alternatives</b>; hybrid systems are possible, but battery-sensitive applications favor RTK.</li>
+        <li>Judge questions probed company/foundation/team location (US-based) and how value accrues between the company and the equity/token.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="exp" data-exp="pitch_samani">
+    <div class="eh" data-toggle><span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></span> Full notes</div>
+    <div class="ebody">
+      <div class="notesec"><h4>Thesis / argument</h4><p>GEODNET, crypto precise location (RTK). Largest and fastest-growing RTK network in the world; home-deployment devices. Ag applications; supplier to TomTom, which supplies AV companies. Next wave of consumer robotics, robotic mowers, ~1M sold this year. Very capital-efficient, 80% of revenue used to buy back tokens. Effectively a revenue share and a securitized stake in customer revenue.</p></div>
+      <div class="notesec org"><h4 class="org">Organizer detail</h4><p>Centimeter-level accuracy; rapid expansion via individuals deploying base stations; serves agriculture, drones, robotics, AVs. Tokenomics: 80% of corporate revenue contractually used for open-market buybacks; ~$11M run-rate, 3x YoY, FDV ~$150M seen as undervalued. Ground-based RTK wins on cost/energy vs. microsatellite alternatives; hybrid systems possible but many battery-sensitive applications favor RTK.</p></div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /wrap -->
+
+<div class="wrap">
+  <footer>
+    <p class="ft"><b>LIQUIDITY SUMMIT 2026 · LWM NOTES &amp; CHAMATH'S INSIGHT</b>, Synthesized from three sources: field notes taken live June 1–2, 2026; the conference organizers' session summaries; and Chamath Palihapitiya's own written reflections. Takeaways are paraphrased and reflect the synthesizer's interpretation; figures are as stated by speakers and should be independently verified before reliance. Lines attributed to Chamath are drawn from his reflections and are presented as his views. Not investment advice.</p>
+    <p class="by">By <b>Curtis Lederle</b> &nbsp;·&nbsp; <span class="lwm">Learn With Me</span> team, <b>Social Capital</b> &nbsp;·&nbsp; <a href="mailto:curtis@socialcapital.com">curtis@socialcapital.com</a></p>
+  </footer>
+</div>
+
+<script>
+/* accordions */
+document.querySelectorAll("[data-toggle]").forEach(h=>{
+  h.addEventListener("click",()=>{ h.closest(".exp").classList.toggle("open"); });
+});
+
+/* theme toggle */
+(function(){
+  const sun='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
+  const moon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>';
+  const b=document.body,t=document.getElementById("tg");
+  function set(m){ b.setAttribute("data-theme",m); t.innerHTML=m==="dark"?sun:moon; }
+  set("light");
+  t.addEventListener("click",()=>set(b.getAttribute("data-theme")==="dark"?"light":"dark"));
+})();
+
+/* mobile hamburger menu */
+(function(){
+  const btn=document.getElementById("menuBtn"), nav=document.getElementById("mobnav");
+  if(!btn||!nav) return;
+  btn.addEventListener("click",()=>{
+    const open=nav.classList.toggle("open");
+    btn.setAttribute("aria-expanded",open?"true":"false");
+  });
+  nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{
+    nav.classList.remove("open"); btn.setAttribute("aria-expanded","false");
+  }));
+})();
+
+/* nav active state */
+const navLinks=[...document.querySelectorAll(".topnav a")];
+const targets=navLinks.map(a=>document.querySelector(a.getAttribute("href")));
+window.addEventListener("scroll",()=>{
+  let idx=0; targets.forEach((t,i)=>{ if(t&&t.getBoundingClientRect().top<170) idx=i; });
+  navLinks.forEach((a,i)=>a.classList.toggle("on",i===idx));
+},{passive:true});
+</script>
+
+</body></html>
